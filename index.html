@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="stylesheets/loading.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="manifest" href="images/favicons/site.webmanifest">
+    <title>LocalChatGPT.net - Your Local AI Chat Implementation</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+    <meta name="keywords" content="LocalChatGPT, AI chat, chatbot, browser storage">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="images/favicons/android-chrome-512x512.png">
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Experience the power of AI chat with LocalChatGPT.net - your local chatbot implementation with all data stored in your browser. Connect with ease and convenience, and enjoy personalized conversations like never before!">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PJYC6D0JXL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PJYC6D0JXL');
+</script>
+<body>
+    <nav class="mobile__nav">
+        <img id="burger" src="images/burger.svg" alt="Burger Icon">
+        <span onclick="window.location.reload()" id="new__chat" style="font-size: 2rem;">+</span>
+    </nav>
+
+    <nav class="sidenav">
+        <a class="sidenav__link" href="/" name="new-chat-button" role="button" tabindex="0"><span style="font-size: 2rem;">+</span>New chat</a>
+        <a class="sidenav__link" name="api-modal-button" role="button" tabindex="0"><img style="width: 20px;" src="images/caution.svg" alt="Caution Icon">Enter API Key</a>
+    </nav>
+
+    <dialog id="api__modal">
+        <h1>🔑Enter OpenAI API Key:</h1>
+        <a href="https://openai.com/">Get your API key from OpenAI dashboard.</a>
+        <p>Your API key is stored locally in your browser and is never sent anywhere else.</p>
+        <form class="api__modal__form">
+            <input class="api__modal__input" type="text" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx">
+            <button id="api__submit__button" type="submit">Save API Key</button>
+        </form>
+        <p>This app will check your OpenAI API to make sure it matches the correct pattern.</p>
+        <img id="api__modal__cross__icon" src="images/close.svg" alt="Modal Close Icon">
+    </dialog>
+
+    <main class="chat">
+
+        <section class="chat__content">
+            <h1>Local ChatGPT</h1>
+            <div class="features__container">
+                <h2><span><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>Examples</h2>
+                <ul class="features">
+                    <li>"Explain quantum computing in simple terms"</li>
+                    <li>"Got any creative ideas for a 10 year old's birthday?"</li>
+                    <li>"How do I make an HTTP request in javascript?"</li>
+                </ul>
+            </div>
+            <div class="features__container">
+                <h2><span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"></path></svg></span>Capabilities</h2>
+                <ul class="features">
+                    <li>Remembers what user said earlier in the conversation</li>
+                    <li>Allows user to provide follow-up conversation</li>
+                    <li>Trained to decline inappropriate requests</li>
+                </ul>
+            </div>
+            <div class="features__container">
+                <h2><span><svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>Limitations</h2>
+                <ul class="features">
+                    <li>May occasionally generate incorrect information</li>
+                    <li>May occasionally produce harmful instructions or biased content</li>
+                    <li>Limited knowledge of world and events after 2021</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <form class="chat__form">
+        <div class="chat__input__container">
+            <textarea class="chat__input" placeholder="Send a message..."></textarea>
+            <img id="chat__submit__icon" src="images/send.svg" alt="Submit Message Icon">
+        </div>
+        <p class="chat__notice">Made with ❤️ by <a href="https://youtube.com/@mohamedhambouta" target="_blank">Mohamed Hambouta</a></p>
+    </form>
+
+    <div id="overlay"></div>
+
+    <script src="javascripts/ui.js"></script>
+    <script src="javascripts/chat.js"></script>
+    <script src="javascripts/app.js"></script>
+</body>
+</html>
