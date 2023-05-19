@@ -23,7 +23,7 @@ myApp.chat = (function() {
 
     // Check if chat content is empty and adjust accordingly
     const updateChatContent = (forceRemove=false) => {
-        var chat = document.querySelector('main');
+        var chat = document.querySelector('.chat');
 
         if (chat.children[0].tagName === "SECTION" || forceRemove) {
             chat.removeChild(chat.children[0]);
