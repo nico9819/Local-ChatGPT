@@ -75,7 +75,17 @@ myApp.chat = (function() {
 
         let response = await fetch('https://api.openai.com/v1/chat/completions', options);
         let jsonData = await response.json();
-        if (response.status !== 200) throw new Error(`server responded with status code ${response.status}`);
+        if (response.status !== 200) {
+            if ('error' in jsonData) {
+                if (jsonData.error.message.length > 0) {
+                    throw new Error(jsonData.error.message);
+                } else {
+                    throw new Error(jsonData.error.code);
+                };
+            } else {
+                throw new Error(`server responded with status code ${response.status}`);
+            };
+        };
         let botMessage = jsonData.choices[0].message;
         return botMessage;
     };
