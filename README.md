@@ -2,7 +2,7 @@
 
 LocalChatGPT is a web application that utilizes local storage to implement a chat interface powered by OpenAI's GPT-3.5 language model. This application allows users to engage in conversations with the chatbot without the need for a server or external database. All user interactions and chat history are stored locally within the user's web browser.
 
-[Link to YouTube Tutorial](https://www.youtube.com/@mohamedhambouta)
+[Link to YouTube Tutorial](https://www.youtube.com/watch?v=MoUKFLig_Rc)
 
 ## Features
 
@@ -65,7 +65,7 @@ LocalChatGPT was created by [Mohamed Hambouta](https://github.com/moehambouta).
 
 ## Support
 
-For support or inquiries, please contact [moehambouta@gmail.com](mailto:moehambouta@gmail.com).
+For support or inquiries, please contact [Email](mailto:bame97@outlook.com).
 
 ## Acknowledgements
 
