@@ -65,7 +65,7 @@ LocalChatGPT was created by [Mohamed Hambouta](https://github.com/moehambouta).
 
 ## Support
 
-For support or inquiries, please contact [moehambouta@gmail.com](mailto:moehambouta@gmail.com).
+For support or inquiries, please contact [moehambouta@gmail.com](mailto:bame97@outlook.com).
 
 ## Acknowledgements
 
