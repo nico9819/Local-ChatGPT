@@ -50,7 +50,3 @@ You can customize the LocalChatGPT application to fit your needs:
 - Customize the behavior or add new features by editing the JavaScript code.
 
 - Adjust the chatbot's language model settings by modifying the relevant code in `chat.js`.
-
-## Contributing
-
-Contributions are welcome! If you have any ideas, suggestions, or bug fixes, please open an issue or submit a pull request.
