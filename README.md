@@ -39,7 +39,7 @@ That's it! You can now start chatting with the AI-powered chatbot.
 
 5. The chatbot's response will appear in the chat window above.
 
-6. Continue the conversation by entering more messages.
+6. Continue the conversation by sending more messages.
 
 ## Customization
 
@@ -54,19 +54,3 @@ You can customize the LocalChatGPT application to fit your needs:
 ## Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or bug fixes, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Credits
-
-LocalChatGPT was created by [Mohamed Hambouta](https://github.com/moehambouta).
-
-## Support
-
-For support or inquiries, please contact [Email](mailto:bame97@outlook.com).
-
-## Acknowledgements
-
-- [OpenAI](https://openai.com/) for providing the GPT-3.5 language model.
