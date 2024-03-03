@@ -1,40 +1,23 @@
-require('dotenv').config();
-const express = require('express');
-const path = require('path');
-const helmet = require('helmet');
-const compression = require('compression');
-const morgan = require('morgan');
-const fs = require('fs');
-const https = require('https');
+var path = require('path');
+var logger = require('morgan');
+var express = require('express');
+var upload = require('express-fileupload');
+var cookieParser = require('cookie-parser');
 
-const PORT = process.env.PORT || 3000;
+var indexRouter = require('./routes/index');
 
-const app = express();
+var app = express();
 
-app.use(helmet()); // Set security-related HTTP response headers
-app.use(compression()); // Compress all routes
-app.use(morgan('combined')); // Log HTTP requests
+app.use(upload());
+app.use(logger('dev'));
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// Handle SPA routing by serving the index.html file
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.use('/', indexRouter);
+app.use('*', function(req, res){
+    res.status(404).send('Something broke!');
 });
 
-// Basic 404 handler
-app.use((req, res, next) => {
-    res.status(404).send('Page not found');
-});
-
-// Basic error handler
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
-});
+module.exports = app;
