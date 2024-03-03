@@ -1,14 +1,12 @@
 var path = require('path');
 var logger = require('morgan');
 var express = require('express');
-var upload = require('express-fileupload');
 var cookieParser = require('cookie-parser');
 
 var indexRouter = require('./routes/index');
 
 var app = express();
 
-app.use(upload());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
