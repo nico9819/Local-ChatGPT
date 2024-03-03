@@ -23,17 +23,29 @@ To use LocalChatGPT, follow these steps:
 ```
 2. Open the project folder.
 
-3. Open `index.html` in your preferred web browser.
+3. Install the necessary dependencies (ensure you have Node.js installed):
 
-That's it! You can now start chatting with the AI-powered chatbot.
+```bash
+   npm install
+```
+
+4. Start the server:
+
+```bash
+   npm start
+```
+
+5. Open `http://localhost:3000` in your preferred web browser.
+
+That's it! The LocalChatGPT application is now running with a basic server, ready for chatting.
 
 ## Usage
 
-1. Launch the application by opening `index.html` in a web browser.
+1. Launch the application by navigating to `http://localhost:3000` in your web browser.
 
 2. Launch the API key modal by clicking the modal button located in the side nav.
 
-3. Once your API key is saved locally, Enter your message in the input field at the bottom of the chat window.
+3. Once your API key is saved, enter your message in the input field at the bottom of the chat window.
 
 4. Press Enter or click the send button to send your message.
 
